@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'ADL PARTNER' %}
+
+{%  block body %}
+    <div class="jumbotron text-center">
+        <h1>Bienvenue sur ADLP Website </h1>
+        <p>lorem ipsum Hae duae provinciae bello quondam piratico catervis mixtae praedonum a Servilio pro consule missae sub iugum factae sunt vectigales. et hae quidem regiones velut in prominenti terrarum lingua positae ob orbe eoo monte Amano disparantur.</p>
+    </div>
+
+    <div class="container">
+        <h2>Les derniers magazines</h2>
+        <div class="row flex">
+            {% for magazines in magazines %}
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                             <a href="{{ path('magazine.show', {id: magazines.id, slug: magazines.slug}) }}"> {{ magazines.title }}</a>
+                            </h5>
+                            <p class="card.text">{{ magazines.category}}</p>
+                            <div class="text-primary" style="font-weight: bold;font-size: 2rem">{{ magazines.price}} €</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

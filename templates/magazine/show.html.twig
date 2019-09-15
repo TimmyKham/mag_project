@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title magazines.title %}
+
+{% block body %}
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+
+                </div>
+                <div class="col-md-4">
+                    <h1>{{ magazines.title }}</h1>
+                    <div class="text-primary" style="font-size: 4rem;font-weight: bold;">{{ magazines.price }} €</div>
+                    <h2>{{ magazines.seller }} </h2>
+                    <a href="#" class="btn btn-primary">Contacter le vendeur</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+
+        <p>
+            {{ magazines.description | nl2br }}
+        </p>
+
+        <div class="row">
+            <div class="cold-md-8">
+                <h2>Détails produits</h2>
+                <table class="table table-striped">
+                    <tr>
+                        <td> Catégorie</td>
+                        <td>{{ magazines.category }}</td>
+                    </tr>
+                    <tr>
+                        <td> Vendeur</td>
+                        <td>{{ magazines.seller }}</td>
+                    </tr>
+                    <tr>
+                        <td> Date de publication</td>
+                        <td>{{ magazines.date | date('Y-m-d') }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="cold-md-4">
+                <h2>Spécificités</h2>
+            </div>
+        </div>
+    </div>
+{% endblock %}
