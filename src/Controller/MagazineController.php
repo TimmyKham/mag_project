@@ -35,6 +35,7 @@ class MagazineController extends AbstractController {
     /**
      * @Route("/magazines/{slug}-{id}", name="magazine.show", requirements={"slug": "[a-z0-9\-]*"})
      * @param Magazines $magazines
+     * @param string $slug
      * @return Response
      */
     public function show(Magazines $magazines, string $slug): Response

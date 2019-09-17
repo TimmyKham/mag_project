@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Gérer les magazines' %}
+
+{%  block body %}
+
+    <div class="container mt-4">
+        <h1> Gérer les magazines</h1>
+
+        {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+        {% endfor %}
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+    {% for magazines in magazines %}
+        <tr>
+            <td>{{ magazines.title }}</td>
+            <td>
+                <a href="{{ path('admin.magazines.edit', {id: magazines.id}) }}" class="btn btn-secondary">Editer</a>
+                <form method="post" action="{{ path('admin.magazines.delete', {id: magazines.id}) }}" style="display: inline-block" onsubmit="return confirm('Êtes vous vraiment sûr ?')">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ magazines.id) }}">
+                    <button class="btn btn-danger">Supprimer</button>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+        <div class="text-right">
+            <a href="{{ path('admin.magazines.new') }}" class="btn btn-primary"> Ajouter un nouveau magazine</a>
+        </div>
+    </div>
+{% endblock %}
