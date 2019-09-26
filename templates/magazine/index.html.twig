@@ -5,5 +5,15 @@
 {%  block body %}
     <div class="container mt-4">
         <h1>Voir tous nos magazines </h1>
+        <div class="row">
+            {% for magazines in magazines %}
+                <div class="col-md-4">
+                {% include 'magazine/_magazines.html.twig'%}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="pagination">
+            {{ knp_pagination_render(magazines) }}
+        </div>
     </div>
 {% endblock %}

@@ -1,0 +1,13 @@
+<div class="card mb-4">
+    <div class="card-body">
+        <h5 class="card-title">
+            <a href="{{ path('magazine.show', {slug: magazines.slug, id: magazines.id}) }}">
+                {{ magazines.title }}
+            </a>
+        </h5>
+        <p class="card-text">{{ magazines.category }}</p>
+        <div class="text-primary" style="font-size:2rem; font-weight: bold; ">
+            {{ magazines.price }} €
+        </div>
+    </div>
+</div>

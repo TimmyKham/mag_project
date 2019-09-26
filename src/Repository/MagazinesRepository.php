@@ -5,6 +5,9 @@ namespace App\Repository;
 use App\Entity\Magazines;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\Query;
+use Doctrine\ORM\QueryBuilder;
+use PhpParser\Builder\Property;
 
 /**
  * @method Magazines|null find($id, $lockMode = null, $lockVersion = null)
@@ -18,6 +21,7 @@ class MagazinesRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Magazines::class);
     }
+
 
     // /**
     //  * @return Magazines[] Returns an array of Magazines objects
@@ -46,13 +50,32 @@ class MagazinesRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+
     */
+
+    /**
+     * @return Query
+     */
+    public function findAllVisibleQuery():Query{
+        return $this->findVisibleQuery()
+            ->getQuery()
+            ;
+    }
+
+    /**
+     * @return Property[]
+     */
     public function findLatest(): array
     {
-        return $this->createQueryBuilder('p')
+        return $this->findVisibleQuery()
             ->setMaxResults(4)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
+    private function findVisibleQuery(): QueryBuilder
+    {
+        return $this->createQueryBuilder('p');
+    }
+
+
 }
