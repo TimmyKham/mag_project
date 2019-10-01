@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd4b96bc-790b-41bb-a5d5-355c90a169cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/knp_paginator.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/magazine/_magazines.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/KnpPaginatorBundle.fr.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/MagazinesSearch.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/MagazinesSearchType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MagazineController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MagazineController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/MagazinesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MagazinesRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/magazine/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/magazine/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/magazine/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/magazine/show.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +29,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
   </component>
@@ -66,7 +61,7 @@
       <workItem from="1568028227939" duration="431000" />
       <workItem from="1568028672765" duration="3260000" />
       <workItem from="1568032102740" duration="24000" />
-      <workItem from="1569528007336" duration="1098000" />
+      <workItem from="1569528007336" duration="4179000" />
     </task>
     <servers />
   </component>

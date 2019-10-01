@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Magazines;
+use App\Entity\MagazinesSearch;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\ORM\Query;
@@ -56,10 +57,14 @@ class MagazinesRepository extends ServiceEntityRepository
     /**
      * @return Query
      */
-    public function findAllVisibleQuery():Query{
-        return $this->findVisibleQuery()
-            ->getQuery()
-            ;
+    public function findAllVisibleQuery(MagazinesSearch $search):Query{
+        $query = $this->findVisibleQuery();
+        if ($search ->getMaxPrice()) {
+            $query = $query
+                ->andWhere('p.price <= :maxprice')
+                ->setParameter('maxprice', $search->getMaxPrice());
+        }
+            return $query -> getQuery();
     }
 
     /**

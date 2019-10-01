@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Entity\Magazines;
+use App\Entity\MagazinesSearch;
+use App\Form\MagazinesSearchType;
 use App\Repository\MagazinesRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Knp\Component\Pager\Pagination\PaginationInterface;
@@ -26,20 +28,26 @@ class MagazineController extends AbstractController {
 
     /**
      * @Route("/magazines", name="magazine.index")
-     * @param PaginationInterface $paginator
+     * @param PaginatorInterface $paginator
      * @param Request $request
      * @return Response
      */
     public function index(PaginatorInterface $paginator, Request $request): Response
     {
+        $search = new MagazinesSearch();
+        $form = $this ->createForm(MagazinesSearchType::class, $search);
+        $form -> handleRequest($request);
+
+
         $magazines = $paginator ->paginate(
-            $this->repository->findAllVisibleQuery(),
+            $this->repository->findAllVisibleQuery($search),
             $request->query->getInt('page', 1),
             12
         );
         return $this->render('magazine/index.html.twig', [
             'current_menu' => 'magazines',
-            'magazines' => $magazines
+            'magazines' => $magazines,
+            'form' => $form->createView()
         ]);
     }
 
