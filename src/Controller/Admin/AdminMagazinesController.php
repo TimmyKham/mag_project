@@ -5,11 +5,14 @@ use App\Entity\Magazines;
 use App\Form\MagazineType;
 use App\Repository\MagazinesRepository;
 use Doctrine\Common\Persistence\ObjectManager;
+use Liip\ImagineBundle\Imagine\Cache\CacheManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 
 class AdminMagazinesController extends AbstractController{
 
@@ -69,6 +72,7 @@ class AdminMagazinesController extends AbstractController{
      */
 
     public function edit(Magazines $magazines, Request $request){
+
         $form =$this->createForm(MagazineType::class, $magazines);
         $form->handleRequest($request);
 

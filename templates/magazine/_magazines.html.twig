@@ -1,4 +1,10 @@
 <div class="card mb-4">
+    {% if magazines.filename %}
+        <img src="/images/magazines/{{ magazines.filename }}" alt="card-img-top" style="width: 100%; height: auto;">
+    {% else %}
+        <img src="/images/magazines/blank_mag.png" alt="card-img-top" style="width: 100%; height: auto;">
+    {% endif %}
+
     <div class="card-body">
         <h5 class="card-title">
             <a href="{{ path('magazine.show', {slug: magazines.slug, id: magazines.id}) }}">
