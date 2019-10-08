@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cd4b96bc-790b-41bb-a5d5-355c90a169cc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/magazines/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/magazines/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/magazines/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/magazines/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/magazine/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/magazine/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/magazine/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/magazine/show.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,7 +64,7 @@
       <workItem from="1568028227939" duration="431000" />
       <workItem from="1568028672765" duration="3260000" />
       <workItem from="1568032102740" duration="24000" />
-      <workItem from="1569528007336" duration="21207000" />
+      <workItem from="1569528007336" duration="21631000" />
     </task>
     <servers />
   </component>
