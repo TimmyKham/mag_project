@@ -12,12 +12,14 @@
             {{ message }}
         </div>
         {% endfor %}
-
     <table class="table table-striped">
         <thead>
         <tr>
             <th>Titre</th>
             <th>Actions</th>
+            <div class="text-right">
+                <a href="{{ path('admin.magazines.new') }}" class="btn btn-primary" style="background-color: #be1c33!important;"> Ajouter un nouveau magazine</a>
+            </div>
         </tr>
         </thead>
         <tbody>
@@ -29,15 +31,12 @@
                 <form method="post" action="{{ path('admin.magazines.delete', {id: magazines.id}) }}" style="display: inline-block" onsubmit="return confirm('Êtes vous vraiment sûr ?')">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ magazines.id) }}">
-                    <button class="btn btn-danger">Supprimer</button>
+                    <button class="btn btn-danger" style="background-color: #be1c33!important;">Supprimer</button>
                 </form>
             </td>
         </tr>
     {% endfor %}
         </tbody>
     </table>
-        <div class="text-right">
-            <a href="{{ path('admin.magazines.new') }}" class="btn btn-primary"> Ajouter un nouveau magazine</a>
-        </div>
     </div>
 {% endblock %}

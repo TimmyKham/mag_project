@@ -7,8 +7,8 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
-        <a class="navbar-brand" href="{{path('home')}}" >ADLP Shop</a>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #be1c33" >
+        <a class="navbar-brand" href="{{path('home')}}" >ADLP MAG</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -19,7 +19,10 @@
                     <a class="nav-link {% if current_menu is defined and current_menu == 'magazines' %} active" {% endif %}"  href="{{ path('magazine.index') }}">Nos Magazines</a>
                 </li>
                 <li>
-                    <a class="nav-link {% if current_menu is defined and current_menu == 'magazines' %} active" {% endif %}"  href="{{ path('admin.magazines.index') }}">Connexion</a>
+                    <a class="nav-link {% if current_menu is defined and current_menu == 'login' %} active" {% endif %}"  href="{{ path('admin.magazines.index') }}">Connexion</a>
+                </li>
+                <li>
+                    <a class="nav-link {% if current_menu is defined and current_menu == 'admin' %} active" {% endif %}"  href="{{ path('admin.magazines.index') }}">Gestion</a>
                 </li>
             </ul>
             {% if app.user%}
