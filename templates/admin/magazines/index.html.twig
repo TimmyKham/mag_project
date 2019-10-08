@@ -18,7 +18,7 @@
             <th>Titre</th>
             <th>Actions</th>
             <div class="text-right">
-                <a href="{{ path('admin.magazines.new') }}" class="btn btn-primary" style="background-color: #be1c33!important;"> Ajouter un nouveau magazine</a>
+                <a href="{{ path('admin.magazines.new') }}" class="btn btn-primary" style="background-color: #be1c33!important;border-color: #dc3545;"> Ajouter un nouveau magazine</a>
             </div>
         </tr>
         </thead>
@@ -31,7 +31,7 @@
                 <form method="post" action="{{ path('admin.magazines.delete', {id: magazines.id}) }}" style="display: inline-block" onsubmit="return confirm('Êtes vous vraiment sûr ?')">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ magazines.id) }}">
-                    <button class="btn btn-danger" style="background-color: #be1c33!important;">Supprimer</button>
+                    <button class="btn btn-danger" style="background-color: #be1c33!important;border-color: #dc3545;">Supprimer</button>
                 </form>
             </td>
         </tr>
