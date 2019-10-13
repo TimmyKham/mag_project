@@ -3,7 +3,7 @@
 {% block title 'ADLP Magazine' %}
 
 {%  block body %}
-    <div class="jumbotron text-center">
+    <div class="jumbotron text-center" style="background-color:#ffdfdf">
         <h1>Bienvenue sur ADLP Magazine </h1>
         <p>Votre kiosque magazines à prix réduits</p>
     </div>
@@ -22,10 +22,10 @@
                         {% endif %}
                         <div class="card-body">
                             <h5 class="card-title">
-                             <a href="{{ path('magazine.show', {id: magazines.id, slug: magazines.slug}) }}"> {{ magazines.title }}</a>
+                             <a style="font-weight: bold;color: #be1c33!important;" href="{{ path('magazine.show', {id: magazines.id, slug: magazines.slug}) }}"> {{ magazines.title }}</a>
                             </h5>
                             <p class="card.text">{{ magazines.category}}</p>
-                            <div class="text-primary" style="font-weight: bold;font-size: 2rem;"  >{{ magazines.price}} €</div>
+                            <div class="text-primary" style="font-weight: bold;font-size: 2rem;color: #be1c33!important;"  >{{ magazines.price}} €</div>
                         </div>
                     </div>
                 </div>
